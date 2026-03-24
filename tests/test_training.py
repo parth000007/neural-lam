@@ -5,7 +5,6 @@ from pathlib import Path
 import pytest
 import pytorch_lightning as pl
 import torch
-import wandb
 
 # First-party
 from neural_lam import config as nlconfig
@@ -105,7 +104,6 @@ def run_simple_training(datastore, set_output_std):
         datastore=datastore,
         config=config,
     )
-    wandb.init()
     trainer.fit(model=model, datamodule=data_module)
 
 
